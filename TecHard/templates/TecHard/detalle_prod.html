@@ -1,0 +1,33 @@
+{% extends 'TecHard/base.html' %}
+
+{% block title %}Detalle del Producto{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        Detalle del Producto
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Codigo de Producto: {{ producto.cod_pro }}</h5>
+                        <p class="card-text">Nombre de Producto: {{ Producto.nom_pro | date:"d/m/Y" }}</p>
+                        <p class="card-text">Descripción: {{ Producto.desc }}</p>
+                        <p class="card-text">Stock: {{ Producto.stock}}</p>
+                        <p class="card-text">Precio: {{ Producto.precio }}</p>
+                    </div>
+                    {% comment %}
+                    <div class="card-footer text-muted">
+                        <a href="{% url 'edit_producto' producto.cod_pro %}" class="btn btn-primary">Editar Producto</a>
+                        <a href="{% url 'delete_producto' producto.cod_pro %}" class="btn btn-danger">Eliminar Producto</a>
+                        <a href="{% url 'ver_productos' %}" class="btn btn-secondary">Volver al listado</a>
+                    </div>
+                    {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

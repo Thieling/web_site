@@ -1,0 +1,14 @@
+{% extends 'TecHard/base.html' %}
+
+{% block title %}Realizar Compra{% endblock %}
+
+{% block content %}
+<h2>Realizar Compra</h2>
+<form action="" class="formulario_create_compra" method="post">
+    {% csrf_token %} <!-- sino pongo este token los datos no ingresan-->
+    {{ form.as_p }}
+    <br> <!-- salto en blanco-->
+   <button type="submit" id="bntEnviar" class="button">Comprar</button>
+</form>
+{{ mensaje }}
+{% endblock %}
